@@ -1,6 +1,9 @@
 from django.contrib import admin
-from .models import Category, Dish
+from .models import Category, Dish, Gallery, Contact
 
+
+admin.site.register(Gallery)
+admin.site.register(Contact)
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
