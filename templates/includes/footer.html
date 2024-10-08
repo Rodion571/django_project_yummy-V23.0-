@@ -1,28 +1,24 @@
 <footer id="footer" class="footer">
-
     <div class="container">
-      <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-geo-alt icon"></i>
-          <div>
-            <h4>Address</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022 - US<br>
-            </p>
-          </div>
-
-        </div>
+        <div class="row gy-3">
+            <div class="col-lg-3 col-md-6 d-flex">
+                <i class="{{ footer_items.address.item_icon }}"></i>
+                <div>
+                    <h4>{{ footer_items.address.item_title }}</h4>
+                    <p>
+                        {{ footer_items.address.item_description|safe }}
+                    </p>
+                </div>
+            </div>
 
         <div class="col-lg-3 col-md-6 footer-links d-flex">
-          <i class="bi bi-telephone icon"></i>
-          <div>
-            <h4>Reservations</h4>
-            <p>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-          </div>
+          <i class="{{ footer_items.reservations.item_icon }}"></i>
+                <div>
+                    <h4>{{ footer_items.reservations.item_title }}</h4>
+                    <p>
+                        {{ footer_items.reservations.item_description|safe }}
+                    </p>
+                </div>
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links d-flex">

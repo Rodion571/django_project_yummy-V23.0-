@@ -20,11 +20,17 @@ from django.urls import path
 from home.views import index
 from yummy_sep_2024 import settings
 from django.conf.urls.static import static
+from home.views import thanks
+from account.views import UserLogin, UserRegister, logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('thanks/', thanks, name='thanks'),
+    path('', index, name='index'),
 
-    path('', index),
+    path('login/', UserLogin.as_view(), name='login'),
+    path('register/', UserRegister.as_view(), name='register'),
+    path('logout/', logout, name='logout'),
 ]
 
 if settings.DEBUG:

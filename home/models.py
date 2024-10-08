@@ -3,6 +3,18 @@ from django.core.validators import RegexValidator
 from ckeditor.fields import RichTextField
 
 
+class FooterItems(models.Model):
+    item_title = models.CharField(max_length=50)
+    item_description = RichTextField()
+    item_icon = models.CharField(max_length=100, null=True, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.item_title
+
+
 class Category(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
     name = models.CharField(max_length=50, unique=True)
@@ -79,6 +91,9 @@ class Reservation(models.Model):
     time = models.TimeField()
     people = models.IntegerField()
     message = models.TextField()
+
+    is_processed = models.BooleanField(default=False)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

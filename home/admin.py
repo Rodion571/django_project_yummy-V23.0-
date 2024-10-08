@@ -1,7 +1,9 @@
 from django.contrib import admin
-from .models import Category, Dish, Gallery, Contact
+from .models import Category, Dish, Gallery, Contact, Reservation, FooterItems
 
 
+admin.site.register(FooterItems)
+admin.site.register(Reservation)
 admin.site.register(Gallery)
 admin.site.register(Contact)
 
