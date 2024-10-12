@@ -22,7 +22,7 @@ class UserLogin(LoginView):
     template_name = 'login.html'
 
     def get_success_url(self):
-        return redirect('index')
+        return self.request.GET.get('next') or '/'
 
 
 def logout(request):
